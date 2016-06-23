@@ -2,10 +2,12 @@
 
 let app = require('express')();
 let http = require('http').Server(app);
+const io = require('socket.io')(http);
 let cors = require('cors');
 let fileUpload = require('express-fileupload');
 const moment = require('moment');
 const fs = require('fs');
+
 
 app.use(cors());
 app.use(fileUpload());
@@ -24,6 +26,7 @@ app.post('/uploads', (request, response) => {
         }
 
         console.log(path + ' moved in uploads');
+        io.emit('upload', {path: path});
         response.send('file uploaded');
     });
 });
