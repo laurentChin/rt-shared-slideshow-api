@@ -5,11 +5,12 @@ let http = require('http').Server(app);
 let cors = require('cors');
 let fileUpload = require('express-fileupload');
 const moment = require('moment');
+const fs = require('fs');
 
 app.use(cors());
 app.use(fileUpload());
 
-app.post('/upload', (request, response) => {
+app.post('/uploads', (request, response) => {
     if (!request.files) {
        response.status(400).send('no files uploaded');
     }
@@ -25,6 +26,13 @@ app.post('/upload', (request, response) => {
         console.log(path + ' moved in uploads');
         response.send('file uploaded');
     });
+});
+
+app.get('/uploads', (request, response) => {
+    let pictures = [];
+
+    pictures = fs.readdirSync('uploads');
+    response.send(pictures);
 });
 
 http.listen(3000, () => {
