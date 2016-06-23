@@ -1,0 +1,29 @@
+{
+  "name": "rt-shared-slideshow-api",
+  "version": "1.0.0",
+  "description": "API part of the real time shared slideshow project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laurentChin/rt-shared-slideshow-api.git"
+  },
+  "keywords": [
+    "realtime",
+    "websocket",
+    "file-upload",
+    "nodejs",
+    "socket.io"
+  ],
+  "author": "Laurent Janet <laurent.janet@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laurentChin/rt-shared-slideshow-api/issues"
+  },
+  "homepage": "https://github.com/laurentChin/rt-shared-slideshow-api#readme",
+  "dependencies": {
+    "socket.io": "^1.4.6"
+  }
+}
