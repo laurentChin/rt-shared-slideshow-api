@@ -13,7 +13,7 @@ const thumbGenerator = require('node-thumbnail').thumb;
 app.use(cors());
 app.use(fileUpload());
 
-app.post('/uploads', (request, response) => {
+app.post('/api/uploads', (request, response) => {
     if (!request.files) {
        response.status(400).send('no file provided for upload.');
     }
@@ -40,7 +40,7 @@ app.post('/uploads', (request, response) => {
     });
 });
 
-app.get('/uploads', (request, response) => {
+app.get('/api/uploads', (request, response) => {
 
     let thumbs = fs.readdirSync('uploads')
       .reverse()
