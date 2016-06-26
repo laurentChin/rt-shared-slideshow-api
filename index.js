@@ -34,7 +34,10 @@ app.post('/uploads', (request, response) => {
 app.get('/uploads', (request, response) => {
     let pictures = [];
 
-    pictures = fs.readdirSync('uploads');
+    pictures = fs.readdirSync('uploads')
+      .reverse()
+      .slice(0, 11);
+
     response.send(pictures);
 });
 
