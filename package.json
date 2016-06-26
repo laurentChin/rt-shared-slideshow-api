@@ -28,6 +28,7 @@
     "express": "^4.14.0",
     "express-fileupload": "0.0.5",
     "moment": "^2.13.0",
+    "node-thumbnail": "^0.6.6",
     "socket.io": "^1.4.6"
   }
 }
